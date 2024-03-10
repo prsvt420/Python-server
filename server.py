@@ -23,6 +23,10 @@ class Server:
                 try:
                     client_socket, client_address = server_socket.accept()
                     request = client_socket.recv(1024).decode('UTF-8')
+
+                    if request.startswith('POST'):
+                        request += client_socket.recv(1024).decode('UTF-8')
+
                     if not request:
                         continue
 

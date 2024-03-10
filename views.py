@@ -7,6 +7,16 @@ def login_page(request):
     template_name = 'login.html'
     template = env_templates.get_template(template_name)
     response = template.render()
+    method = request.split()[0]
+    if method == 'POST':
+        form_data = request.split('\r\n\r\n')[1]
+        username, password = form_data.split('&')
+        username = username.split('=')[1]
+        password = password.split('=')[1]
+
+        ...
+
+        return header.encode('UTF-8') + response.encode('UTF-8')
     return header.encode('UTF-8') + response.encode('UTF-8')
 
 
