@@ -1,5 +1,8 @@
+from http import HTTPStatus
+
+
 def get_static_by_request(request):
-    header = 'HTTP/1.1 200 OK\nContent-Type: text/css\n\n'
+    header = f'HTTP/1.1 {HTTPStatus.OK} OK\nContent-Type: text/css\n\n'
     path_to_file = request.split(' ')[1]
 
     if path_to_file.startswith('/static/'):
