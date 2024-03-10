@@ -9,6 +9,8 @@ class UrlDispatcher:
 
     def get_template_by_request(self, request):
         urlpattern = request.split(' ')[1]
+        if '?' in urlpattern:
+            urlpattern, parameters = urlpattern.split('?')
 
         if self.is_exist_urlpattern(urlpattern):
             view = self.get_view_by_urlpattern(urlpattern)
