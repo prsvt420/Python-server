@@ -5,6 +5,7 @@ class UrlDispatcher:
     def __init__(self):
         self.urlpatterns = {
             '/login': views.login_page,
+            '/registration': views.registration_page,
             '/index': views.index_page,
         }
 
