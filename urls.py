@@ -5,6 +5,7 @@ class UrlDispatcher:
     def __init__(self):
         self.urlpatterns = {
             '/login': views.login_page,
+            '/index': views.index_page,
         }
 
     def get_template_by_request(self, request):

@@ -9,4 +9,4 @@ logging.basicConfig(level=logging.INFO)
 
 env_templates = Environment(loader=FileSystemLoader('templates'))
 
-DATABASE_URL = 'sqlite:///python-server.db'
+DATABASE_URL = 'sqlite:///db.sqlite3'
