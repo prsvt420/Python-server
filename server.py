@@ -30,7 +30,7 @@ class Server:
                     if not request:
                         continue
 
-                    logging.info(request)
+                    logging.info(request.splitlines()[0])
 
                     thread = threading.Thread(target=self.handle_request, args=(client_socket, request))
                     thread.start()
